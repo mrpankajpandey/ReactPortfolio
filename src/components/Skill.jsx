@@ -14,24 +14,30 @@ const Skill = () => {
         {
           id: 3,
           name: "TailWind",
+          style:'border border-blue-500/60'
         },
         {
           id: 4,
           name: "JavaScript",
+          style:'border border-yellow-500/60'
         },
         {
           id: 5,
           name: "ReactJs",
+          style:'border border-blue-500/60'
         },
       ];
       const backEnd= [
         {
           id: 1,
           name: "Nodjs",
+          style:'border border-green-500/60'
+         
         },
         {
           id: 2,
           name: "Express",
+          style:'border border-gray-500/60'
         },
         {
           id: 3,
@@ -47,10 +53,12 @@ const Skill = () => {
         {
           id: 1,
           name: "MySql",
+          style:'border border-blue-500/60'
         },
         {
           id: 2,
           name: "MongoDB",
+          style:'border border-green-500/60'
         },
         {
           id: 3,
@@ -59,7 +67,43 @@ const Skill = () => {
         {
           id: 4,
           name: "Python",
+          style:'border border-green-500/60'
         },
+    
+      ];
+      const programming= [
+        {
+          id: 1,
+          name: "C",
+        },
+        {
+          id: 2,
+          name: "c++",
+        },
+        {
+          id: 3,
+          name: "Java",
+          style:'border border-yellow-500/60'
+
+        },
+        {
+          id: 4,
+          name: "Python",
+          style:'border border-green-500/60'
+        },
+    
+      ];
+      const tools= [
+        {
+          id: 1,
+          name: "Git",
+          style:'border border-gray-500/60'
+        },
+        {
+          id: 2,
+          name: "Github",
+        },
+       
     
       ];
   return (
@@ -78,10 +122,10 @@ const Skill = () => {
                   Frontend
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {frontEnd.map(({ id, name }) => (
+                  {frontEnd.map(({ id, name, style }) => (
                     <div
                       key={id}
-                      className={` rounded-md bg-[#14131a] text-xs p-2 text-[#8b8a91] `}
+                      className={` rounded-md bg-[#14131a] text-xs p-2 text-[#8b8a91] ${style}  `}
                     >
                       {name}
                     </div>
@@ -94,10 +138,10 @@ const Skill = () => {
                   Backend
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {backEnd.map(({ id, name }) => (
+                  {backEnd.map(({ id, name, style }) => (
                     <div
                       key={id}
-                      className={` rounded-md bg-[#14131a] text-xs p-2 text-[#8b8a91] `}
+                      className={` rounded-md bg-[#14131a] text-xs p-2 text-[#8b8a91]  ${style}`}
                     >
                       {name}
                     </div>
@@ -110,16 +154,50 @@ const Skill = () => {
                   DataBase
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {dataBase.map(({ id, name }) => (
+                  {dataBase.map(({ id, name, style }) => (
                     <div
                       key={id}
-                      className={` rounded-md bg-[#14131a] text-xs p-2 text-[#8b8a91] `}
+                      className={` rounded-md bg-[#14131a] text-xs p-2 text-[#8b8a91]  ${style} `}
                     >
                       {name}
                     </div>
                   ))}
                 </div>
               </div>
+{/*start  programming languages */}
+              <div className="flex-1 flex flex-col gap-4 p-4 rounded-md shadow-lg bg-[#1c1b23]">
+                <div className=" text-[#8b8a91] font-medium text-lg tracking-wider">
+                  Programming Languages
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {programming.map(({ id, name, style }) => (
+                    <div
+                      key={id}
+                      className={` rounded-md bg-[#14131a] text-xs p-2 text-[#8b8a91]  ${style} `}
+                    >
+                      {name}
+                    </div>
+                  ))}
+                </div>
+              </div>
+{/* end programming languages */}
+{/* Tools */}
+              <div className="flex-1 flex flex-col gap-4 p-4 rounded-md shadow-lg bg-[#1c1b23]">
+                <div className=" text-[#8b8a91] font-medium text-lg tracking-wider">
+                 Tools
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {tools.map(({ id, name, style }) => (
+                    <div
+                      key={id}
+                      className={` rounded-md bg-[#14131a] text-xs p-2 text-[#8b8a91]  ${style}`}
+                    >
+                      {name}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
             </div>
           </div>
           <div className="grid bg-[#1c1b23] gap-6 lg:col-span-3 p-5">
