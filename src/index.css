@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins:ital,wght@0,400;1,500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body{
+  font-family: 'Poppins', sans-serif;
+}
+
+
+@layer base{
+
+.gradient-hover-outer{
+    @apply  p-[1px] dark:bg-[#1c1b23] bg-slate-100 hover:bg-gradient-to-br hover:from-black hover:via-slate-50 dark:hover:via-slate-600 hover:to-black
+}
+.gradient-hover-inner{
+    @apply bg-slate-50 dark:bg-[#1c1b23] group-hover:bg-gradient-to-br group-hover:from-slate-50 dark:group-hover:from-slate-500 group-hover:via-slate-50 dark:group-hover:via-slate-500  group-hover:to-slate-50 dark:group-hover:to-slate-50
+}
+}
