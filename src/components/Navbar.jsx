@@ -25,7 +25,7 @@ const Navbar = ({theme}) => {
           <div className="flex space-x-2">
             <img src={photo} className="w-12 h-12 rounded-full" alt="" />
             <h1 className="text-xl font-thin cursor-pointer">
-              mrpankajpandey
+              PanKa<span className="text-2xl text-green-500 font-mono">J</span>
               <p className="text-sm">Full-Stack Web Dev</p>
             </h1>
           </div>

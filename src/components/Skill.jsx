@@ -26,6 +26,11 @@ const Skill = () => {
           name: "ReactJs",
           style:'border border-blue-500/60'
         },
+        {
+          id: 6,
+          name: "Boottrap",
+          style:'border border-blue-400/60'
+        },
       ];
       const backEnd= [
         {
@@ -46,6 +51,7 @@ const Skill = () => {
         {
           id: 4,
           name: "Python",
+          style:'border border-green-500/60'
         },
     
       ];
@@ -102,6 +108,16 @@ const Skill = () => {
         {
           id: 2,
           name: "Github",
+        },
+        {
+          id: 3,
+          name: "Postman",
+          style: 'border border-red-600/60'
+        },
+        {
+          id: 4,
+          name: "Linux",
+          style:'border border-black-500'
         },
        
     

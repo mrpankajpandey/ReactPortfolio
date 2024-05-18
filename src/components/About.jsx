@@ -13,8 +13,8 @@ const About = () => {
           stack. With a backgroud in IT, I strive to create impactful and
           visually stunnig solution that leave a lasting imparison.
         </p>
-        <button className="py-3 px-4 bg-blue-600 rounded-full text-white">
-         <a target="_blank" href="https://drive.google.com/file/d/10u_Bm9yX3tUgpwZHsgzPmxifVjbEBtb6/view?usp=sharing">Download CV </a>
+        <button className="py-3 px-4 bg-blue-600 rounded-full hover:scale-110 text-white ">
+         <a className="" target="_blank" href="https://drive.google.com/file/d/10u_Bm9yX3tUgpwZHsgzPmxifVjbEBtb6/view?usp=sharing">Download CV </a>
         </button>
 
        
