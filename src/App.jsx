@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import Navbar from './components/Navbar'
 import Home from './components/Home'
@@ -8,6 +8,8 @@ import Footer from './components/Footer'
 import Contact from './components/Contact'
 import Skill from './components/Skill'
 import { Toaster } from 'react-hot-toast';
+import CustomCursor from './components/CustomCursor'
+
 
 
 const App = () => {
@@ -23,11 +25,13 @@ const App = () => {
     setTheme(theme  ==='dark' ? 'light' :'dark')
   
   }
+ 
   return (
     <>
+    <CustomCursor></CustomCursor>
+   
     <div className='dark:bg-black dark:text-white'>
 
- 
    <Navbar theme={handleSwitch}></Navbar>
     <Home></Home>
     <About></About>
