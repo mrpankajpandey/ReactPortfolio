@@ -222,7 +222,7 @@ const Skill = () => {
                  <a  target="_blank" href="#">
                   <div className="flex items-center gap-1 text-[#8b8a91] rounded-lg">
                     {/* icon */}
-                    <FaBloggerB className="text-"/>
+                    <FaBloggerB className="text-5xl"/>
                     <div className="flex flex-1 xl flex-col px-4 py-2">
                       <div className="flex text-xl font-bold">ConVoApp</div>
                       <div className="flex text-xs">ReactJs, ExpressJs, NodeJs</div>
@@ -235,7 +235,7 @@ const Skill = () => {
                  <a  target="_blank" href="#">
                   <div className="flex items-center gap-1 text-[#8b8a91] rounded-lg">
                     {/* icon */}
-                    <FaBloggerB className="text-"/>
+                    <FaBloggerB className="text-xl"/>
                     <div className="flex flex-1 xl flex-col px-4 py-2">
                       <div className="flex text-xl font-bold">News Website</div>
                       <div className="flex text-xs">Php, Bootstrap, Ajax, JavaScript</div>
@@ -247,7 +247,7 @@ const Skill = () => {
                  <a  target="_blank" href="#">
                   <div className="flex items-center gap-1 text-[#8b8a91] rounded-lg">
                     {/* icon */}
-                    <FaBloggerB className="text-"/>
+                    <FaBloggerB className="text-xl"/>
                     <div className="flex flex-1 xl flex-col px-4 py-2">
                       <div className="flex text-xl font-bold">Personal Portfolio</div>
                       <div className="flex text-xs">Reactjs, JavaScript</div>
