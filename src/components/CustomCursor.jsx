@@ -34,7 +34,7 @@ const CustomCursor = () => {
     },[])
 
   return (
-    <div ref={cursor} className={`${style.cursor} expand `}></div>
+    <div ref={cursor} className={`${style.cursor} hidden md:block`}></div>
   )
 }
 

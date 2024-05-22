@@ -224,8 +224,9 @@ const Skill = () => {
                     {/* icon */}
                     <FaBloggerB className="text-"/>
                     <div className="flex flex-1 xl flex-col px-4 py-2">
-                      <div className="flex text-xl font-bold">Blog Website</div>
-                      <div className="flex text-xs">Php, Bootstrap, Ajax, JavaScript</div>
+                      <div className="flex text-xl font-bold">ConVoApp</div>
+                      <div className="flex text-xs">ReactJs, ExpressJs, NodeJs</div>
+                      <div className="flex text-xs">It's a docs converter app Docs to Pdf- </div>
                     </div>
                     <IoIosArrowForward className="text-2xl"/>
                        {/* github visit icon */}
@@ -248,7 +249,7 @@ const Skill = () => {
                     {/* icon */}
                     <FaBloggerB className="text-"/>
                     <div className="flex flex-1 xl flex-col px-4 py-2">
-                      <div className="flex text-xl font-bold">Personal Portfoli</div>
+                      <div className="flex text-xl font-bold">Personal Portfolio</div>
                       <div className="flex text-xs">Reactjs, JavaScript</div>
                     </div>
                     <IoIosArrowForward className="text-2xl"/>
