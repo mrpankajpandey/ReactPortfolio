@@ -1,31 +1,40 @@
 import axios from 'axios'
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { db } from '../firebaseConfig';
+import { collection, addDoc } from 'firebase/firestore';
+
 import toast from 'react-hot-toast'
 
 const Contact = () => {
-    const {
-        register,
-        handleSubmit,
-        watch,
-        formState: { errors },
-      } =useForm()
-      const onSubmit = async (data) =>{
-        const userInfo ={
-          name:data.name,
-          email:data.email,
-          message:data.message,
-        }
-        try {
-          await axios.post('https://getform.io/f/pagxzwrb', userInfo);
-          toast.success(`Your Message Send Successfully ! ${userInfo.name} 👏`);
-      
-
-        } catch{
-          toast.error(`There was an error. Please try again later.' ${userInfo.name} `);
-       
-        }
-      }
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [success, setSuccess] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } =useForm()
+  const onSubmit = async (e) => {
+    // e.preventDefault();
+    try {
+      await addDoc(collection(db, 'contacts'), {
+        name,
+        email,
+        message,
+        timestamp: new Date()
+      });
+      setSuccess(true);
+      setName('');
+      setEmail('');
+      setMessage('');
+      toast.success(`Thank you for your message! ${name} I will get back to you soon`);
+    } catch (error) {
+      console.error('Error adding document: ', error);
+      toast.error(`Something went wrong, Please try Again ${name} `);
+    }
+  };
   return (
     <>
     <hr />
@@ -36,17 +45,17 @@ const Contact = () => {
             <h2 className='text-2xl font-normal'>Send me a Mesaage</h2>
             <h4 className="text-xl font-mono">I'am Very Responsive To Message </h4>
             <div className='w-full md:w-1/2 flex flex-col gap-2'>
-                <input {...register("name", { required: true })} name='name' className='w-full h-[50px] rounded-full leading-tight border border-black py-2 px-4 dark:bg-[#1c1b23]' type="text" placeholder='Name'/>
+                <input {...register("name", { required: true })} name='name' value={name} onChange={(e) => setName(e.target.value)} className='w-full h-[50px] rounded-full leading-tight border border-black py-2 px-4 dark:bg-[#1c1b23]' type="text" placeholder='Name'/>
                 {errors.name && <span className='text-red-300 mx-4' >This field is required</span>}
 
             </div>
             <div className='w-full md:w-1/2 flex flex-col gap-2'>
-                <input {...register("email", { required: true })} name='email' className='w-full h-[50px] rounded-full border border-black py-2 px-4  dark:bg-[#1c1b23]' type="email" placeholder='Email' />
+                <input {...register("email", { required: true })} name='email' value={email} onChange={(e) => setEmail(e.target.value)} className='w-full h-[50px] rounded-full border border-black py-2 px-4  dark:bg-[#1c1b23]' type="email" placeholder='Email'  />
                 {errors.email && <span className=' mx-4 text-red-300'>This field is required</span>}
-
+               
             </div>
             <div className='w-full md:w-1/2 flex  flex-col gap-2'>
-                <textarea {...register("message", { required: true })} name='message' className='w-full h-[140px] rounded-md border border-black py-2 px-4  dark:bg-[#1c1b23]'  type="text " placeholder='Enter Your Message'/>
+                <textarea {...register("message", { required: true })} name='message' value={message} onChange={(e) => setMessage(e.target.value)} className='w-full h-[140px] rounded-md border border-black py-2 px-4  dark:bg-[#1c1b23]'  type="text " placeholder='Enter Your Message'/>
                 {errors.message && <span className='mx-4 text-red-300'>This field is required</span>}
 
             </div>
