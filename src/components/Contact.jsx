@@ -29,7 +29,7 @@ const Contact = () => {
       setName('');
       setEmail('');
       setMessage('');
-      toast.success(`Thank you for your message! ${name} I will get back to you soon`);
+      toast.success(`Thank you for your message! ${name}  👏 I will get back to you soon`);
     } catch (error) {
       console.error('Error adding document: ', error);
       toast.error(`Something went wrong, Please try Again ${name} `);
