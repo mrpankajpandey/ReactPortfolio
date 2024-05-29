@@ -14,7 +14,7 @@ const About = () => {
           visually stunnig solution that leave a lasting imparison.
         </p>
         <button className="py-3 px-4 bg-blue-600 rounded-full hover:scale-110 text-white ">
-         <a className="" target="_blank" href="https://drive.google.com/file/d/10u_Bm9yX3tUgpwZHsgzPmxifVjbEBtb6/view?usp=sharing">Download CV </a>
+         <a className="" target="_blank" href="https://docs.google.com/document/d/1wSuGWDlbKGiml0FvVjfkL8wqh-qpXuFnjXTYQcDJMaM/edit?usp=sharing">Download CV </a>
         </button>
 
        
