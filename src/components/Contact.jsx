@@ -11,6 +11,7 @@ const Contact = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [success, setSuccess] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -50,7 +51,7 @@ const Contact = () => {
 
             </div>
             <div className='w-full md:w-1/2 flex flex-col gap-2'>
-                <input {...register("email", { required: true })} name='email' value={email} onChange={(e) => setEmail(e.target.value)} className='w-full h-[50px] rounded-full border border-black py-2 px-4  dark:bg-[#1c1b23]' type="email" placeholder='Email'  />
+                <input {...register("email",  { required: true }, )} name='email' value={email} onChange={(e) => setEmail(e.target.value)} className='w-full h-[50px] rounded-full border border-black py-2 px-4  dark:bg-[#1c1b23]' type="email" placeholder='Email'  />
                 {errors.email && <span className=' mx-4 text-red-300'>This field is required</span>}
                
             </div>

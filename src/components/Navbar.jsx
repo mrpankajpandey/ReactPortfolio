@@ -6,9 +6,11 @@ import { Link } from "react-scroll";
 import { CiDark } from "react-icons/ci";
 import { CiLight } from "react-icons/ci";
 import { useGSAP } from "@gsap/react";
+import Login from "./Login";
 import gsap from "gsap";
-const Navbar = ({theme}) => {
+const Navbar = ({ theme }) => {
   const [menu, setMenu] = useState(false);
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
   const navItems = [
     { id: 1, name: "Home" },
     { id: 2, name: "About" },
@@ -17,6 +19,9 @@ const Navbar = ({theme}) => {
     { id: 5, name: "Contact" },
   ];
 
+  const openLogin = () => setIsLoginOpen(true);
+  const closeLogin = () => setIsLoginOpen(false);
+ 
 
   return (
     <>
@@ -31,28 +36,40 @@ const Navbar = ({theme}) => {
           </div>
           {/* For destop menu  */}
           <div>
-            <ul id="list"  className="hidden lg:flex space-x-8 text-lg">
+            <ul id="list" className="hidden lg:flex space-x-8 text-lg">
               {navItems.map(({ id, name }) => (
                 <li
                   className="hover:scale-105 duration-200 cursor-pointer"
                   key={id}
                 >
                   <Link
-               to={name}
-               smooth={true}
-               duration={500}
-               offset={-70}
-               activeClass="active"
-               >     {name}</Link> 
+                    to={name}
+                    smooth={true}
+                    duration={500}
+                    offset={-70}
+                    activeClass="active"
+                  >
+                    {" "}
+                    {name}
+                  </Link>
                 </li>
               ))}
-              <li onClick={(  )=> theme()} className="text-2xl">  <CiDark /> </li>
+              <li
+                onClick={openLogin}
+                className="border cursor-pointer hover:border-blue-700 text-black px-4 rounded-lg dark:text-white"
+              >
+                Login
+              </li>
+              <li onClick={() => theme()} className="text-2xl">
+                {" "}
+                <CiDark />{" "}
+              </li>
             </ul>
             <div className="lg:hidden" onClick={() => setMenu(!menu)}>
               {menu ? <IoCloseSharp size={24} /> : <AiOutlineMenu size={24} />}
             </div>
           </div>
-        </div>  
+        </div>
         {/* For mobile devices */}
         {menu && (
           <div className="bg-white">
@@ -62,21 +79,33 @@ const Navbar = ({theme}) => {
                   className="hover:scale-105 duration-200 cursor-pointer"
                   key={id}
                 >
-               <Link
-               to={name}
-               smooth={true}
-               duration={500}
-               offset={-70}
-               activeClass="active"
-               >     {name}</Link> 
+                  <Link
+                    to={name}
+                    smooth={true}
+                    duration={500}
+                    offset={-70}
+                    activeClass="active"
+                  >
+                    {" "}
+                    {name}
+                  </Link>
                 </li>
-                
               ))}
-               <li onClick={(  )=> theme()} className="text-5xl">  <CiDark /> </li>
+              <li
+                onClick={openLogin}
+                className="border cursor-pointer hover:border-blue-700 text-white px-4 rounded-lg"
+              >
+                Login
+              </li>
+              <li onClick={() => theme()} className="text-5xl">
+                {" "}
+                <CiDark />{" "}
+              </li>
             </ul>
           </div>
         )}
       </nav>
+      <Login isOpen={isLoginOpen} onRequestClose={closeLogin} />
     </>
   );
 };
