@@ -66,15 +66,7 @@ const Skill = () => {
           name: "MongoDB",
           style:'border border-green-500/60'
         },
-        {
-          id: 3,
-          name: "Php",
-        },
-        {
-          id: 4,
-          name: "Python",
-          style:'border border-green-500/60'
-        },
+      
     
       ];
       const programming= [
