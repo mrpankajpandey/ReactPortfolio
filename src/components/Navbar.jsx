@@ -14,8 +14,8 @@ const Navbar = ({ theme }) => {
   const navItems = [
     { id: 1, name: "Home" },
     { id: 2, name: "About" },
+    { id: 4, name: "Skills" },
     { id: 3, name: "Services" },
-    { id: 4, name: "Skill" },
     { id: 5, name: "Contact" },
   ];
 
